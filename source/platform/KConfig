@@ -2,4 +2,21 @@
 menu "Platform"
 	config PLAT_NOASSERT
 		bool "Disable CONTEND assertion"
+
+	choice
+		prompt "Override default endianness"
+		optional
+
+		config PLAT_ENDIAN_BIG
+			bool "big"
+
+		config PLAT_ENDIAN_LITTLE
+			bool "little"
+
+		config PLAT_ENDIAN_PDP
+			bool "pdp-11"
+
+		config PLAT_ENDIAN_HS316
+			bool "honeywell-316"
+	endchoice
 endmenu
