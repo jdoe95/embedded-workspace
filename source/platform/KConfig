@@ -1,3 +1,5 @@
 # source/platform/KConfig
 menu "Platform"
+	config PLAT_NOASSERT
+		bool "Disable CONTEND assertion"
 endmenu
