@@ -23,4 +23,11 @@ menu "Platform"
 		config PLAT_ENDIAN_HS316
 			bool "honeywell-316"
 	endchoice
+
+	config PLAT_BYTESWAP
+		bool "Byteswap functions"
+
+	config PLAT_BYTESWAP_NOGENERIC
+		bool
+		depends on PLAT_BYTESWAP
 endmenu
