@@ -6,4 +6,21 @@ menu "Platform"
 	config PLAT_USE_CONTEND_FAIL
 		bool "Use contend_fail() even if assert() is available"
 		depends on !PLAT_NOCONTEND
+
+	choice
+		prompt "Override default endianness"
+		optional
+
+		config PLAT_ENDIAN_BIG
+			bool "big"
+
+		config PLAT_ENDIAN_LITTLE
+			bool "little"
+
+		config PLAT_ENDIAN_PDP
+			bool "pdp-11"
+
+		config PLAT_ENDIAN_HS316
+			bool "honeywell-316"
+	endchoice
 endmenu
