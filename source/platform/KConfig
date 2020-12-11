@@ -37,4 +37,7 @@ menu "Platform"
 	config PLAT_BITREVERSE_NOGENERIC
 		bool
 		depends on PLAT_BITREVERSE
+
+	config PLAT_MEMFILL
+		bool "Memory filling routines"
 endmenu
