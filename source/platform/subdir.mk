@@ -14,3 +14,5 @@ endif
 ifneq ($(MENU_PLAT_BITREVERSE_NOGENERIC),y)
 SRC-$(MENU_PLAT_BITREVERSE) += bitreverse.c
 endif
+
+SRC-$(MENU_PLAT_MEMFILL) += memfill.c
