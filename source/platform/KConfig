@@ -36,4 +36,7 @@ menu "Platform"
 
 	config PLAT_MEMFILL
 		bool "Memory filling routines"
+
+	config PLAT_UNALIGNED
+		bool "Unaligned access routines"
 endmenu
