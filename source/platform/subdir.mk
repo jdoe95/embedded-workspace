@@ -18,3 +18,4 @@ SRC-$(MENU_PLAT_BITREVERSE) += bitreverse.c
 endif
 
 SRC-$(MENU_PLAT_MEMFILL) += memfill.c
+SRC-$(MENU_PLAT_UNALIGNED) += unaligned.c
