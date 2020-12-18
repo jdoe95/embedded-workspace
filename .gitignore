@@ -8,3 +8,6 @@ build/
 .cproject
 .project
 .settings/
+
+# backup files
+*~
