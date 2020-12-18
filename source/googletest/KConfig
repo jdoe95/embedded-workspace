@@ -1,0 +1,131 @@
+# source/googletest/KConfig
+config GTEST
+	bool "GoogleTest"
+
+config GMOCK
+	bool "GoogleMock"
+	select GTEST
+
+menu "GoogleTest Framework Settings"
+	depends on GTEST
+
+	choice
+		prompt "GTEST_HAS_CLONE"
+		optional
+
+		config GTEST_HASCLONE_1
+			bool "1"
+
+		config GTEST_HASCLONE_0
+			bool "0"
+	endchoice
+
+	choice
+		prompt "GTEST_HAS_EXCEPTIONS"
+		optional
+
+		config GTEST_HASEXCEPTIONS_1
+			bool "1"
+
+		config GTEST_HASEXCEPTIONS_0
+			bool "0"
+	endchoice
+
+	choice
+		prompt "GTEST_HAS_POSIX_RE"
+		optional
+
+		config GTEST_HASPOSIX_RE_1
+			bool "1"
+
+		config GTEST_HASPOSIX_RE_0
+			bool "0"
+	endchoice
+
+	choice
+		prompt "GTEST_HAS_PTHREAD"
+		optional
+
+		config GTEST_HASPTHREAD_1
+			bool "1"
+
+		config GTEST_HASPTHREAD_0
+			bool "0"
+	endchoice
+
+	choice
+		prompt "GTEST_HAS_RTTI"
+		optional
+
+		config GTEST_HASRTTI_1
+			bool "1"
+
+		config GTEST_HASRTTI_0
+			bool "0"
+	endchoice
+
+	choice
+		prompt "GTEST_HAS_STD_WSTRING"
+		optional
+
+		config GTEST_HASSTDWSTRING_1
+			bool "1"
+
+		config GTEST_HASSTDWSTRING_0
+			bool "0"
+	endchoice
+
+	choice
+		prompt "GTEST_HAS_SEH"
+		optional
+
+		config GTEST_HASSEH_1
+			bool "1"
+
+		config GTEST_HASSEH_0
+			bool "0"
+	endchoice
+
+	choice
+		prompt "GTEST_HAS_STREAM_REDIRECTION"
+		optional
+
+		config GTEST_HASSTREAMREDIRECTION_1
+			bool "1"
+
+		config GTEST_HASSTREAMREDIRECTION_0
+			bool "0"
+	endchoice
+
+	choice
+		prompt "GTEST_LINKED_AS_SHARED_LIBRARY"
+		optional
+
+		config GTEST_LINKEDASSHAREDLIBRARY_1
+			bool "1"
+
+		config GTEST_LINKEDASSHAREDLIBRARY_0
+			bool "0"
+	endchoice
+
+	choice
+		prompt "GTEST_CREATE_SHARED_LIBRARY"
+		optional
+
+		config GTEST_CREATESHAREDLIBRARY_1
+			bool "1"
+
+		config GTEST_CREATESHAREDLIBRARY_0
+			bool "0"
+	endchoice
+
+	choice
+		prompt "GTEST_DEFAULT_DEATH_TEST_STYLE"
+		optional
+		config GTEST_DEFAULTDEATHTEST_THREADSAFE
+			bool "threadsafe"
+
+		config GTEST_DEFAULTDEATHTEST_FAST
+			bool "fast"
+	endchoice
+endmenu
