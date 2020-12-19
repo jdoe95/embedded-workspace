@@ -2,3 +2,4 @@
 rsource "variant/$VARIANT/KConfig"
 rsource "googletest/KConfig"
 rsource "testing/KConfig"
+rsource "algorithm/KConfig"
