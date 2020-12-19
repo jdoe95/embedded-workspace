@@ -4,3 +4,4 @@ DIR-y += googletest
 DIR-y += testing
 DIR-y += algorithm
 DIR-y += platform
+DIR-y += protocol
