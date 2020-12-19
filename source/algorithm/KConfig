@@ -1,0 +1,3 @@
+# source/algorithm/KConfig
+menu "Algorithm"
+endmenu
