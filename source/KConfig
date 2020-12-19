@@ -1,3 +1,4 @@
 # source/KConfig
 rsource "variant/$VARIANT/KConfig"
 rsource "googletest/KConfig"
+rsource "testing/KConfig"
