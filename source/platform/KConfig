@@ -1,0 +1,3 @@
+# source/platform/KConfig
+menu "Platform"
+endmenu
