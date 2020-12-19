@@ -1,0 +1,7 @@
+# source/testing/KConfig
+config TESTING
+	bool "Unit Testing"
+
+menu "Unit Tests"
+	depends on TESTING
+endmenu
