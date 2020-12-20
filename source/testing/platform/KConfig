@@ -8,3 +8,8 @@ config TEST_PLAT_BITREVERSE
 	bool "platform/bitreverse unit tests"
 	select PLAT_BITREVERSE
 	select GTEST
+
+config TEST_PLAT_MEMFILL
+	bool "platform/memfill unit tests"
+	select PLAT_MEMFILL
+	select GMOCK
