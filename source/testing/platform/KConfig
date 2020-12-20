@@ -13,3 +13,8 @@ config TEST_PLAT_MEMFILL
 	bool "platform/memfill unit tests"
 	select PLAT_MEMFILL
 	select GMOCK
+
+config TEST_PLAT_UNALIGNED
+	bool "platform/unaligned unit tests"
+	select PLAT_UNALIGNED
+	select GMOCK
