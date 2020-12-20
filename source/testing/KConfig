@@ -4,4 +4,5 @@ config TESTING
 
 menu "Unit Tests"
 	depends on TESTING
+	rsource "platform/KConfig"
 endmenu
