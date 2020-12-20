@@ -1,0 +1,5 @@
+# source/testing/platform/KConfig
+config TEST_PLAT_BYTESWAP
+	bool "platform/byteswap unit tests"
+	select PLAT_BYTESWAP
+	select GTEST
