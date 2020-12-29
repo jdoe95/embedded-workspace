@@ -26,4 +26,11 @@ menu "Platform"
 	config PLAT_BYTESWAP_NOGENERIC
 		bool
 		depends on PLAT_BYTESWAP
+
+	config PLAT_BITREVERSE
+		bool "Bit reverse functions"
+
+	config PLAT_BITREVERSE_NOGENERIC
+		bool
+		depends on PLAT_BITREVERSE
 endmenu

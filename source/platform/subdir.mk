@@ -10,3 +10,7 @@ SRC-$(MENU_PLAT_BYTESWAP) += byteswap.c
 ifneq ($(MENU_PLAT_BYTESWAP_NOGENERIC),y)
 SRC-$(MENU_PLAT_BYTESWAP) += byteswap-generic.c
 endif
+
+ifneq ($(MENU_PLAT_BITREVERSE_NOGENERIC),y)
+SRC-$(MENU_PLAT_BITREVERSE) += bitreverse.c
+endif
