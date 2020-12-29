@@ -3,3 +3,8 @@ config TEST_PLAT_BYTESWAP
 	bool "platform/byteswap unit tests"
 	select PLAT_BYTESWAP
 	select GTEST
+
+config TEST_PLAT_BITREVERSE
+	bool "platform/bitreverse unit tests"
+	select PLAT_BITREVERSE
+	select GTEST
