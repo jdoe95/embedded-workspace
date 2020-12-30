@@ -1,4 +1,9 @@
 # source/algorithm/KConfig
 menu "Algorithm"
 	rsource "crc/KConfig"
+	config ALGO_SHA256
+		bool "SHA-256"
+		select PLAT_UNALIGNED
+		select PLAT_BYTESWAP
+		select PLAT_MEMFILL
 endmenu
