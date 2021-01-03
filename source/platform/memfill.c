@@ -27,3 +27,17 @@ void mem_zeropad(void *buf, size_t buf_size, size_t start)
 	for (size_t index = start; index < buf_size; ++index)
 		byte[index] = (uint8_t) 0;
 }
+
+
+
+void mem_copy(void *to, size_t to_start, const void *from, size_t from_start, size_t size)
+{
+	CONTEND(((size == 0) && (to_start ==0) && (from_start == 0)) ||
+			((to != NULL) && (from != NULL)));
+
+	uint8_t *to_byte = (uint8_t*) to;
+	const uint8_t *from_byte = (const uint8_t*) from;
+
+	for (size_t index = 0; index < size; ++index)
+		to_byte[index + to_start] = from_byte[index + from_start];
+}

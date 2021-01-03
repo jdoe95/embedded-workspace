@@ -29,6 +29,12 @@ extern "C" {
 void mem_zeropad(void *buf, size_t buf_size, size_t start);
 
 
+/*
+ * A fancier replacement for memcpy()
+ */
+void mem_copy(void *to, size_t to_start, const void *from, size_t from_start, size_t size);
+
+
 #if defined(__cplusplus)
 }
 #endif
