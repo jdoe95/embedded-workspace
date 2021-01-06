@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+# John Yu created on 01/06/2020
+
+import argparse
+
+
+
+def crc_table_lsb(divisor):
+	table_values = list()
+	for dividend in range(256):
+		for i in range(8):
+			if (dividend & 1):
+				dividend = (dividend >> 1) ^ divisor
+			else:
+				dividend >>= 1
+		table_values.append(dividend)
+	return table_values
+
+
+
+def reverse_bits(value, width):
+	result = 0
+	for i in range(width):
+		result <<= 1
+		result |= value & 1
+		value >>= 1
+	return result
+
+
+
+def format_table(values, type_str, format_str, columns):
+	formatted = [
+		format_str.format(val)
+			for val in values
+	]
+	table_rows = [
+		', '.join(formatted[row_offset:row_offset+columns])
+			for row_offset in range(0, len(formatted), columns)
+	]
+	table_body = '\t' + ',\n\t'.join(table_rows)
+
+	table = (
+		'const {} table[CRC_TABLE_SIZE] = \n'
+		'{{\n'
+		'{}\n'
+		'}};\n'
+	).format(type_str, table_body)
+	return table
+
+
+
+if __name__ == '__main__':
+	parser = argparse.ArgumentParser()
+
+	parser.add_argument('-b', '--bits', type=int, required=True,
+		choices=[8, 16, 32],
+		dest='width'
+	)
+
+	parser.add_argument('-f', '--first-bit', type=str, required=True,
+		help='most or least significant bit first',
+		choices=['most', 'least'],
+		dest='first_bit'
+	)
+
+	parser.add_argument('divisor', type=str,
+		help='divisor in hex (always unreversed)'
+	)
+
+	args = parser.parse_args()
+
+	masks = {8: 0xFF, 16: 0xFFFF, 32: 0xFFFFFFFF}
+	format_strs = {8: '0x{:02X}', 16: '0x{:04X}', 32: '0x{:08X}'}
+	table_cols = {8 : 16, 16: 8, 32: 8}
+	table_type_strs = {8: 'uint8_t', 16: 'uint16_t', 32: 'uint32_t'}
+
+	width = args.width
+	mask = masks[width]
+	format_str = format_strs[width]
+	table_col = table_cols[width]
+	table_type_str = table_type_strs[width]
+	divisor = int(args.divisor, 16) & mask
+
+	"""
+	Both LSb and MSb tables are calculated as LSb and the table content is
+	bit-reversed for MSb
+	"""
+	divisor_reversed = reverse_bits(divisor, width)
+	table_values = crc_table_lsb(divisor_reversed)
+
+	table_header_template =	(
+		"/*\n"
+		" * Precalculated Subtrahends for Dividends 0-255\n"
+		" * Divisor G={} ({})\n"
+		" * {}\n"
+		" */"
+	)
+
+	if args.first_bit == 'least':
+		table_header = table_header_template.format(
+			format_str.format(divisor),
+			format_str.format(divisor_reversed),
+			"LSb first (Euclidian division right shifts)")
+
+		print(table_header)
+		print(format_table(table_values, table_type_str, format_str, table_col))
+
+	else:
+		table_values = [
+			reverse_bits(value, width)
+				for value in table_values
+		]
+
+		table_header = table_header_template.format(
+			format_str.format(divisor),
+			format_str.format(divisor),
+			("MSb first (Euclidian division left shifts)"))
+
+		print(table_header)
+		print(format_table(table_values, table_type_str, format_str, table_col))
