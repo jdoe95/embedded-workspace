@@ -1,3 +1,4 @@
 # source/algorithm/KConfig
 menu "Algorithm"
+	rsource "crc/KConfig"
 endmenu
