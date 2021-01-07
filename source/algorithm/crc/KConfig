@@ -1,0 +1,56 @@
+# source/algorithm/crc/KConfig
+config ALGO_CRC
+	bool
+
+choice
+	prompt "CRC internal implementation"
+	depends on ALGO_CRC
+
+	config ALGO_CRC_TABLE
+		bool "table-based"
+
+	config ALGO_CRC_LOOP
+		bool "loop-based"
+endchoice
+
+config ALGO_CRC32_MF
+	bool
+	select ALGO_CRC
+
+config ALGO_CRC32_LF
+	bool
+	select ALGO_CRC
+
+config ALGO_CRC16_MF
+	bool
+	select ALGO_CRC
+
+config ALGO_CRC16_LF
+	bool
+	select ALGO_CRC
+
+config ALGO_CRC8_MF
+	bool
+	select ALGO_CRC
+
+config ALGO_CRC8_LF
+	bool
+	select ALGO_CRC
+
+# CRC tables
+config ALGO_CRC32_TABLE_IEEE
+	bool
+
+config ALGO_CRC16_TABLE_MODBUS
+	bool
+
+# CRC info blocks
+config ALGO_CRC32_IEEE
+	bool "CRC32-IEEE"
+	select ALGO_CRC32_LF
+	select ALGO_CRC32_TABLE_IEEE if ALGO_CRC_TABLE
+
+config ALGO_CRC16_MODBUS
+	bool "CRC16-MODBUS"
+	select ALGO_CRC16_LF
+	select ALGO_CRC16_TABLE_MODBUS if ALGO_CRC_TABLE
