@@ -1,0 +1,4 @@
+#!/bin/bash
+# Generates a C header guard symbol
+
+echo H$(uuidgen -t | tr - _ | tr [a-z] [A-Z])
