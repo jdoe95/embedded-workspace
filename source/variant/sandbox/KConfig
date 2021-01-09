@@ -1,0 +1,4 @@
+# source/variant/sandbox/KConfig
+config VARIANT_SANDBOX
+	bool
+	default y
