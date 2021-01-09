@@ -1,0 +1,2 @@
+# source/KConfig
+rsource "variant/$VARIANT/KConfig"

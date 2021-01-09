@@ -1,0 +1,3 @@
+# KConfig
+mainmenu "Variant Configuration ($VARIANT)"
+rsource "source/KConfig"
