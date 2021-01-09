@@ -1,0 +1,19 @@
+#!/bin/bash
+
+print_help() {
+	echo "Removes trailing whitespaces, and converts spaces to tabs"
+	echo "Usage:"
+	echo "	  $0 <file1> [file2] ... [fileN]"
+}
+
+if [[ $# -eq 0 ]]; then
+	print_help
+	exit 1
+fi
+
+
+for i in $*; do
+	cp $i $i~
+	sed 's/\s\+$//g' $i~ | unexpand --first-only --tabs=4 > $i
+done
+
