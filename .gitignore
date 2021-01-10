@@ -1,2 +1,5 @@
 # Compiled Python files
 tool/**/__pycache__
+
+# Build directories
+build/
