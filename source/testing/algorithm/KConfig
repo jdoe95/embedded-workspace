@@ -1,4 +1,9 @@
 # source/testing/algorithm/KConfig
 menu "Algorithm Unit Tests"
 	rsource "crc/KConfig"
+
+	config TEST_ALGO_SHA256
+		bool "algorithm/SHA256 unit tests"
+		select ALGO_SHA256
+		select GMOCK
 endmenu
