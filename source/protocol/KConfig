@@ -1,3 +1,4 @@
 # source/protocol/KConfig
 menu "Protocol"
+	rsource "ethernet/KConfig"
 endmenu

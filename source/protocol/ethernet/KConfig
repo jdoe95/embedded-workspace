@@ -1,0 +1,24 @@
+# source/protocol/ethernet/KConfig
+config PROTO_ETH
+	bool "Ethernet Protocol"
+
+menu "Ethernet Protocol Settings"
+	depends on PROTO_ETH
+
+	config PROTO_ETH_PAD
+		bool "Use software to pad packet to minimum size"
+		select PLAT_MEMFILL
+
+	config PROTO_ETH_CHECKSUM
+		bool "Use software to calculate frame check sequence"
+		select PROTO_ETH_PAD
+		select ALGO_CRC32_IEEE
+		select PLAT_UNALIGNED
+		select PLAT_BYTESWAP
+
+	config PROTO_ETH_MAXPAYLOAD
+		int "Maximum payload size"
+		depends on PROTO_ETH_PAD || PROTO_ETH_CHECKSUM
+		range 0 1500
+		default 1500
+endmenu
