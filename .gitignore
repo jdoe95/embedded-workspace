@@ -3,3 +3,8 @@ tool/**/__pycache__
 
 # Build directories
 build/
+
+# Eclipse-CDT Project Files
+.cproject
+.project
+.settings/
