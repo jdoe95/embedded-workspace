@@ -1,0 +1,40 @@
+# source/testing/algorithm/KConfig
+config TEST_ALGO_CRC32_MF
+	bool
+	select GTEST
+	select ALGO_CRC32_MF
+
+config TEST_ALGO_CRC32_LF
+	bool
+	select GTEST
+	select ALGO_CRC32_LF
+
+config TEST_ALGO_CRC16_MF
+	bool
+	select GTEST
+	select ALGO_CRC16_MF
+
+config TEST_ALGO_CRC16_LF
+	bool
+	select GTEST
+	select ALGO_CRC16_LF
+
+config TEST_ALGO_CRC8_MF
+	bool
+	select GTEST
+	select ALGO_CRC8_MF
+
+config TEST_ALGO_CRC8_LF
+	bool
+	select GTEST
+	select ALGO_CRC8_LF
+
+config TEST_ALGO_CRC32_IEEE
+	bool "algorithm/CRC32-IEEE unit tests"
+	select TEST_ALGO_CRC32_LF
+	select ALGO_CRC32_IEEE
+
+config TEST_ALGO_CRC16_MODBUS
+	bool "algorithm/CRC16-MODBUS unit tests"
+	select TEST_ALGO_CRC16_LF
+	select ALGO_CRC16_MODBUS
