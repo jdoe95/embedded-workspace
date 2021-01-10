@@ -1,0 +1,502 @@
+From 5f8d5c91aa0dd96af388f129c09e126549de23fe Mon Sep 17 00:00:00 2001
+From: John Yu <jyu@mestek.com>
+Date: Mon, 7 Dec 2020 12:14:05 -0500
+Subject: [PATCH 1/2] PROJ add eclipse-cdt bare settings
+
+Signed-off-by: John Yu <jyu@mestek.com>
+---
+ .cproject                                     |  57 +++++
+ .project                                      |  27 +++
+ .settings/language.settings.xml               |   4 +
+ .settings/org.eclipse.cdt.codan.core.prefs    | 112 +++++++++
+ .settings/org.eclipse.cdt.core.prefs          | 213 ++++++++++++++++++
+ .settings/org.eclipse.cdt.ui.prefs            |   3 +
+ .../org.eclipse.ltk.core.refactoring.prefs    |   2 +
+ .settings/org.eclipse.wst.sse.core.prefs      |   6 +
+ 8 files changed, 424 insertions(+)
+ create mode 100644 .cproject
+ create mode 100644 .project
+ create mode 100644 .settings/language.settings.xml
+ create mode 100644 .settings/org.eclipse.cdt.codan.core.prefs
+ create mode 100644 .settings/org.eclipse.cdt.core.prefs
+ create mode 100644 .settings/org.eclipse.cdt.ui.prefs
+ create mode 100644 .settings/org.eclipse.ltk.core.refactoring.prefs
+ create mode 100644 .settings/org.eclipse.wst.sse.core.prefs
+
+diff --git a/.cproject b/.cproject
+new file mode 100644
+index 0000000..1b64b67
+--- /dev/null
++++ b/.cproject
+@@ -0,0 +1,57 @@
++<?xml version="1.0" encoding="UTF-8" standalone="no"?>
++<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
++	<storageModule moduleId="org.eclipse.cdt.core.settings">
++		<cconfiguration id="0.1741782302">
++			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="0.1741782302" moduleId="org.eclipse.cdt.core.settings" name="sandbox">
++				<externalSettings/>
++				<extensions>
++					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
++					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
++					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
++					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
++					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
++					<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
++				</extensions>
++			</storageModule>
++			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
++				<configuration artifactName="${ProjName}" buildProperties="" description="" errorParsers="" id="0.1741782302" name="sandbox" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="org.eclipse.cdt.build.core.prefbase.cfg">
++					<folderInfo id="0.1741782302." name="/" resourcePath="">
++						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.2111948643" name="No ToolChain" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
++							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.2111948643.2053855927" name=""/>
++							<builder id="org.eclipse.cdt.build.core.settings.default.builder.369643853" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
++							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.1754885610" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
++						</toolChain>
++					</folderInfo>
++				</configuration>
++			</storageModule>
++			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
++			<storageModule moduleId="ilg.gnumcueclipse.managedbuild.packs"/>
++		</cconfiguration>
++	</storageModule>
++	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
++		<project id="apogee.null.1873157813" name="apogee"/>
++	</storageModule>
++	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
++	<storageModule moduleId="refreshScope" versionNumber="2">
++		<configuration configurationName="sandbox">
++			<resource resourceType="PROJECT" workspacePath="/apogee"/>
++		</configuration>
++		<configuration configurationName="Default">
++			<resource resourceType="PROJECT" workspacePath="/apogee"/>
++		</configuration>
++	</storageModule>
++	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
++	<storageModule moduleId="scannerConfiguration">
++		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
++		<scannerConfigBuildInfo instanceId="0.1741782302;0.1741782302.;cdt.managedbuild.tool.gnu.cpp.compiler.base.475885543;cdt.managedbuild.tool.gnu.cpp.compiler.input.834313479">
++			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
++		</scannerConfigBuildInfo>
++		<scannerConfigBuildInfo instanceId="0.1741782302">
++			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
++		</scannerConfigBuildInfo>
++		<scannerConfigBuildInfo instanceId="0.1741782302;0.1741782302.;cdt.managedbuild.tool.gnu.c.compiler.base.47031620;cdt.managedbuild.tool.gnu.c.compiler.input.1354165790">
++			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
++		</scannerConfigBuildInfo>
++	</storageModule>
++	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
++</cproject>
+\ No newline at end of file
+diff --git a/.project b/.project
+new file mode 100644
+index 0000000..54e4433
+--- /dev/null
++++ b/.project
+@@ -0,0 +1,27 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<projectDescription>
++	<name>apogee</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
++			<triggers>clean,full,incremental,</triggers>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
++			<triggers>full,incremental,</triggers>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.cdt.core.cnature</nature>
++		<nature>org.eclipse.cdt.core.ccnature</nature>
++		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
++		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
++	</natures>
++</projectDescription>
+diff --git a/.settings/language.settings.xml b/.settings/language.settings.xml
+new file mode 100644
+index 0000000..767dd6a
+--- /dev/null
++++ b/.settings/language.settings.xml
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8" standalone="no"?>
++<project>
++	<configuration id="0.1741782302" name="sandbox"/>
++</project>
+\ No newline at end of file
+diff --git a/.settings/org.eclipse.cdt.codan.core.prefs b/.settings/org.eclipse.cdt.codan.core.prefs
+new file mode 100644
+index 0000000..ec0635d
+--- /dev/null
++++ b/.settings/org.eclipse.cdt.codan.core.prefs
+@@ -0,0 +1,112 @@
++eclipse.preferences.version=1
++org.eclipse.cdt.codan.checkers.errnoreturn=Warning
++org.eclipse.cdt.codan.checkers.errnoreturn.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"No return\\")",implicit\=>false}
++org.eclipse.cdt.codan.checkers.errreturnvalue=Error
++org.eclipse.cdt.codan.checkers.errreturnvalue.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Unused return value\\")"}
++org.eclipse.cdt.codan.checkers.localvarreturn=Warning
++org.eclipse.cdt.codan.checkers.localvarreturn.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Returning the address of a local variable\\")"}
++org.eclipse.cdt.codan.checkers.nocommentinside=Error
++org.eclipse.cdt.codan.checkers.nocommentinside.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Nesting comments\\")"}
++org.eclipse.cdt.codan.checkers.nolinecomment=-Error
++org.eclipse.cdt.codan.checkers.nolinecomment.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Line comments\\")"}
++org.eclipse.cdt.codan.checkers.noreturn=Error
++org.eclipse.cdt.codan.checkers.noreturn.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"No return value\\")",implicit\=>false}
++org.eclipse.cdt.codan.internal.checkers.AbstractClassCreation=Error
++org.eclipse.cdt.codan.internal.checkers.AbstractClassCreation.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Abstract class cannot be instantiated\\")"}
++org.eclipse.cdt.codan.internal.checkers.AmbiguousProblem=Error
++org.eclipse.cdt.codan.internal.checkers.AmbiguousProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Ambiguous problem\\")"}
++org.eclipse.cdt.codan.internal.checkers.AssignmentInConditionProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.AssignmentInConditionProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Assignment in condition\\")"}
++org.eclipse.cdt.codan.internal.checkers.AssignmentToItselfProblem=Error
++org.eclipse.cdt.codan.internal.checkers.AssignmentToItselfProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Assignment to itself\\")"}
++org.eclipse.cdt.codan.internal.checkers.BlacklistProblem=-Warning
++org.eclipse.cdt.codan.internal.checkers.BlacklistProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Function or method is blacklisted\\")",blacklist\=>()}
++org.eclipse.cdt.codan.internal.checkers.CStyleCastProblem=-Warning
++org.eclipse.cdt.codan.internal.checkers.CStyleCastProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"C-Style cast instead of C++ cast\\")",checkMacro\=>true}
++org.eclipse.cdt.codan.internal.checkers.CaseBreakProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.CaseBreakProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"No break at end of case\\")",no_break_comment\=>"no break",last_case_param\=>false,empty_case_param\=>false,enable_fallthrough_quickfix_param\=>false}
++org.eclipse.cdt.codan.internal.checkers.CatchByReference=Warning
++org.eclipse.cdt.codan.internal.checkers.CatchByReference.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Catching by reference is recommended\\")",unknown\=>false,exceptions\=>()}
++org.eclipse.cdt.codan.internal.checkers.CircularReferenceProblem=Error
++org.eclipse.cdt.codan.internal.checkers.CircularReferenceProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Circular inheritance\\")"}
++org.eclipse.cdt.codan.internal.checkers.ClassMembersInitialization=Warning
++org.eclipse.cdt.codan.internal.checkers.ClassMembersInitialization.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Class members should be properly initialized\\")",skip\=>true}
++org.eclipse.cdt.codan.internal.checkers.CopyrightProblem=-Warning
++org.eclipse.cdt.codan.internal.checkers.CopyrightProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Lack of copyright information\\")",regex\=>".*Copyright.*"}
++org.eclipse.cdt.codan.internal.checkers.DecltypeAutoProblem=Error
++org.eclipse.cdt.codan.internal.checkers.DecltypeAutoProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Invalid 'decltype(auto)' specifier\\")"}
++org.eclipse.cdt.codan.internal.checkers.FieldResolutionProblem=Error
++org.eclipse.cdt.codan.internal.checkers.FieldResolutionProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Field cannot be resolved\\")"}
++org.eclipse.cdt.codan.internal.checkers.FloatCompareProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.FloatCompareProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Direct float comparison\\")"}
++org.eclipse.cdt.codan.internal.checkers.FunctionResolutionProblem=Error
++org.eclipse.cdt.codan.internal.checkers.FunctionResolutionProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Function cannot be resolved\\")"}
++org.eclipse.cdt.codan.internal.checkers.GotoStatementProblem=-Warning
++org.eclipse.cdt.codan.internal.checkers.GotoStatementProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Goto statement used\\")"}
++org.eclipse.cdt.codan.internal.checkers.InvalidArguments=Error
++org.eclipse.cdt.codan.internal.checkers.InvalidArguments.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Invalid arguments\\")"}
++org.eclipse.cdt.codan.internal.checkers.InvalidTemplateArgumentsProblem=Error
++org.eclipse.cdt.codan.internal.checkers.InvalidTemplateArgumentsProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Invalid template argument\\")"}
++org.eclipse.cdt.codan.internal.checkers.LabelStatementNotFoundProblem=Error
++org.eclipse.cdt.codan.internal.checkers.LabelStatementNotFoundProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Label statement not found\\")"}
++org.eclipse.cdt.codan.internal.checkers.MagicNumberProblem=-Warning
++org.eclipse.cdt.codan.internal.checkers.MagicNumberProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Avoid magic numbers\\")",checkArray\=>true,checkOperatorParen\=>true,exceptions\=>(1,0,-1,2,1.0,0.0,-1.0)}
++org.eclipse.cdt.codan.internal.checkers.MemberDeclarationNotFoundProblem=Error
++org.eclipse.cdt.codan.internal.checkers.MemberDeclarationNotFoundProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Member declaration not found\\")"}
++org.eclipse.cdt.codan.internal.checkers.MethodResolutionProblem=Error
++org.eclipse.cdt.codan.internal.checkers.MethodResolutionProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Method cannot be resolved\\")"}
++org.eclipse.cdt.codan.internal.checkers.MissCaseProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.MissCaseProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Missing cases in switch\\")"}
++org.eclipse.cdt.codan.internal.checkers.MissDefaultProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.MissDefaultProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Missing default in switch\\")",defaultWithAllEnums\=>false}
++org.eclipse.cdt.codan.internal.checkers.MissReferenceProblem=-Warning
++org.eclipse.cdt.codan.internal.checkers.MissReferenceProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Missing reference return value in assignment operator\\")"}
++org.eclipse.cdt.codan.internal.checkers.MissSelfCheckProblem=-Warning
++org.eclipse.cdt.codan.internal.checkers.MissSelfCheckProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Missing self check in assignment operator\\")"}
++org.eclipse.cdt.codan.internal.checkers.MultipleDeclarationsProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.MultipleDeclarationsProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Multiple variable declaration\\")"}
++org.eclipse.cdt.codan.internal.checkers.NamingConventionFunctionChecker=-Info
++org.eclipse.cdt.codan.internal.checkers.NamingConventionFunctionChecker.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Name convention for function\\")",pattern\=>"^[a-z]",macro\=>true,exceptions\=>()}
++org.eclipse.cdt.codan.internal.checkers.NoDiscardProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.NoDiscardProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Return value not evaluated\\")",macro\=>true}
++org.eclipse.cdt.codan.internal.checkers.NonVirtualDestructorProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.NonVirtualDestructorProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Class has a virtual method and non-virtual destructor\\")"}
++org.eclipse.cdt.codan.internal.checkers.OverloadProblem=Error
++org.eclipse.cdt.codan.internal.checkers.OverloadProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Invalid overload\\")"}
++org.eclipse.cdt.codan.internal.checkers.RedeclarationProblem=Error
++org.eclipse.cdt.codan.internal.checkers.RedeclarationProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Invalid redeclaration\\")"}
++org.eclipse.cdt.codan.internal.checkers.RedefinitionProblem=Error
++org.eclipse.cdt.codan.internal.checkers.RedefinitionProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Invalid redefinition\\")"}
++org.eclipse.cdt.codan.internal.checkers.ReturnStyleProblem=-Warning
++org.eclipse.cdt.codan.internal.checkers.ReturnStyleProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Return with parenthesis\\")"}
++org.eclipse.cdt.codan.internal.checkers.ScanfFormatStringSecurityProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.ScanfFormatStringSecurityProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Format String Vulnerability\\")"}
++org.eclipse.cdt.codan.internal.checkers.ShallowCopyProblem=-Warning
++org.eclipse.cdt.codan.internal.checkers.ShallowCopyProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Miss copy constructor or assignment operator\\")",onlynew\=>false}
++org.eclipse.cdt.codan.internal.checkers.StatementHasNoEffectProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.StatementHasNoEffectProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Statement has no effect\\")",macro\=>true,exceptions\=>()}
++org.eclipse.cdt.codan.internal.checkers.StaticVariableInHeaderProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.StaticVariableInHeaderProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Static variable in header file\\")"}
++org.eclipse.cdt.codan.internal.checkers.SuggestedParenthesisProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.SuggestedParenthesisProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Suggested parenthesis around expression\\")",paramNot\=>false}
++org.eclipse.cdt.codan.internal.checkers.SuspiciousSemicolonProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.SuspiciousSemicolonProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Suspicious semicolon\\")",else\=>false,afterelse\=>false}
++org.eclipse.cdt.codan.internal.checkers.SymbolShadowingProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.SymbolShadowingProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Symbol shadowing\\")",paramFuncParameters\=>true}
++org.eclipse.cdt.codan.internal.checkers.TypeResolutionProblem=Error
++org.eclipse.cdt.codan.internal.checkers.TypeResolutionProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Type cannot be resolved\\")"}
++org.eclipse.cdt.codan.internal.checkers.UnusedFunctionDeclarationProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.UnusedFunctionDeclarationProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Unused function declaration\\")",macro\=>true}
++org.eclipse.cdt.codan.internal.checkers.UnusedStaticFunctionProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.UnusedStaticFunctionProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Unused static function\\")",macro\=>true}
++org.eclipse.cdt.codan.internal.checkers.UnusedVariableDeclarationProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.UnusedVariableDeclarationProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Unused variable declaration in file scope\\")",macro\=>true,exceptions\=>("@(\#)","$Id")}
++org.eclipse.cdt.codan.internal.checkers.UsingInHeaderProblem=Warning
++org.eclipse.cdt.codan.internal.checkers.UsingInHeaderProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Using directive in header\\")"}
++org.eclipse.cdt.codan.internal.checkers.VariableResolutionProblem=Error
++org.eclipse.cdt.codan.internal.checkers.VariableResolutionProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Symbol is not resolved\\")"}
++org.eclipse.cdt.codan.internal.checkers.VirtualMethodCallProblem=Error
++org.eclipse.cdt.codan.internal.checkers.VirtualMethodCallProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>true,RUN_ON_INC_BUILD\=>true,RUN_ON_FILE_OPEN\=>false,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>"@suppress(\\"Virtual method call in constructor/destructor\\")"}
++org.eclipse.cdt.qt.core.qtproblem=Warning
++org.eclipse.cdt.qt.core.qtproblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>false,RUN_ON_INC_BUILD\=>false,RUN_ON_FILE_OPEN\=>true,RUN_ON_FILE_SAVE\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true},suppression_comment\=>null}
++useParentScope=false
+diff --git a/.settings/org.eclipse.cdt.core.prefs b/.settings/org.eclipse.cdt.core.prefs
+new file mode 100644
+index 0000000..5491aa9
+--- /dev/null
++++ b/.settings/org.eclipse.cdt.core.prefs
+@@ -0,0 +1,213 @@
++doxygen/doxygen_new_line_after_brief=true
++doxygen/doxygen_use_brief_tag=false
++doxygen/doxygen_use_javadoc_tags=true
++doxygen/doxygen_use_pre_tag=false
++doxygen/doxygen_use_structural_commands=false
++eclipse.preferences.version=1
++environment/project/0.1741782302/VARIANT/delimiter=\:
++environment/project/0.1741782302/VARIANT/operation=append
++environment/project/0.1741782302/VARIANT/value=sandbox
++environment/project/0.1741782302/append=true
++environment/project/0.1741782302/appendContributed=true
++indexer/indexAllFiles=true
++indexer/indexAllHeaderVersions=false
++indexer/indexAllVersionsSpecificHeaders=
++indexer/indexOnOpen=true
++indexer/indexUnusedHeadersWithAlternateLang=false
++indexer/indexUnusedHeadersWithDefaultLang=true
++indexer/indexerId=org.eclipse.cdt.core.fastIndexer
++indexer/skipFilesLargerThanMB=10
++indexer/skipImplicitReferences=false
++indexer/skipIncludedFilesLargerThanMB=20
++indexer/skipMacroReferences=false
++indexer/skipReferences=false
++indexer/skipTypeReferences=false
++indexer/useHeuristicIncludeResolution=false
++org.eclipse.cdt.core.formatter.alignment_for_arguments_in_method_invocation=16
++org.eclipse.cdt.core.formatter.alignment_for_assignment=16
++org.eclipse.cdt.core.formatter.alignment_for_base_clause_in_type_declaration=80
++org.eclipse.cdt.core.formatter.alignment_for_binary_expression=16
++org.eclipse.cdt.core.formatter.alignment_for_compact_if=16
++org.eclipse.cdt.core.formatter.alignment_for_conditional_expression=34
++org.eclipse.cdt.core.formatter.alignment_for_conditional_expression_chain=18
++org.eclipse.cdt.core.formatter.alignment_for_constructor_initializer_list=0
++org.eclipse.cdt.core.formatter.alignment_for_declarator_list=16
++org.eclipse.cdt.core.formatter.alignment_for_enumerator_list=48
++org.eclipse.cdt.core.formatter.alignment_for_expression_list=0
++org.eclipse.cdt.core.formatter.alignment_for_expressions_in_array_initializer=16
++org.eclipse.cdt.core.formatter.alignment_for_lambda_expression=20
++org.eclipse.cdt.core.formatter.alignment_for_member_access=0
++org.eclipse.cdt.core.formatter.alignment_for_overloaded_left_shift_chain=16
++org.eclipse.cdt.core.formatter.alignment_for_parameters_in_method_declaration=16
++org.eclipse.cdt.core.formatter.alignment_for_throws_clause_in_method_declaration=16
++org.eclipse.cdt.core.formatter.brace_position_for_array_initializer=next_line
++org.eclipse.cdt.core.formatter.brace_position_for_block=next_line
++org.eclipse.cdt.core.formatter.brace_position_for_block_in_case=next_line
++org.eclipse.cdt.core.formatter.brace_position_for_linkage_declaration=next_line
++org.eclipse.cdt.core.formatter.brace_position_for_method_declaration=next_line
++org.eclipse.cdt.core.formatter.brace_position_for_namespace_declaration=next_line
++org.eclipse.cdt.core.formatter.brace_position_for_switch=next_line
++org.eclipse.cdt.core.formatter.brace_position_for_type_declaration=next_line
++org.eclipse.cdt.core.formatter.comment.line_up_line_comment_in_blocks_on_first_column=false
++org.eclipse.cdt.core.formatter.comment.min_distance_between_code_and_line_comment=1
++org.eclipse.cdt.core.formatter.comment.never_indent_line_comments_on_first_column=true
++org.eclipse.cdt.core.formatter.comment.preserve_white_space_between_code_and_line_comments=true
++org.eclipse.cdt.core.formatter.comment_formatter_off_tag=@formatter\:off
++org.eclipse.cdt.core.formatter.comment_formatter_on_tag=@formatter\:on
++org.eclipse.cdt.core.formatter.compact_else_if=true
++org.eclipse.cdt.core.formatter.continuation_indentation=2
++org.eclipse.cdt.core.formatter.continuation_indentation_for_array_initializer=2
++org.eclipse.cdt.core.formatter.format_block_comment=true
++org.eclipse.cdt.core.formatter.format_guardian_clause_on_one_line=false
++org.eclipse.cdt.core.formatter.format_header_comment=true
++org.eclipse.cdt.core.formatter.format_line_comment=true
++org.eclipse.cdt.core.formatter.indent_access_specifier_compare_to_type_header=false
++org.eclipse.cdt.core.formatter.indent_access_specifier_extra_spaces=0
++org.eclipse.cdt.core.formatter.indent_body_declarations_compare_to_access_specifier=true
++org.eclipse.cdt.core.formatter.indent_body_declarations_compare_to_linkage=false
++org.eclipse.cdt.core.formatter.indent_body_declarations_compare_to_namespace_header=false
++org.eclipse.cdt.core.formatter.indent_breaks_compare_to_cases=true
++org.eclipse.cdt.core.formatter.indent_declaration_compare_to_template_header=false
++org.eclipse.cdt.core.formatter.indent_empty_lines=false
++org.eclipse.cdt.core.formatter.indent_label_compare_to_statements=true
++org.eclipse.cdt.core.formatter.indent_statements_compare_to_block=true
++org.eclipse.cdt.core.formatter.indent_statements_compare_to_body=true
++org.eclipse.cdt.core.formatter.indent_switchstatements_compare_to_cases=true
++org.eclipse.cdt.core.formatter.indent_switchstatements_compare_to_switch=false
++org.eclipse.cdt.core.formatter.indentation.size=4
++org.eclipse.cdt.core.formatter.insert_new_line_after_colon_in_constructor_initializer_list=insert
++org.eclipse.cdt.core.formatter.insert_new_line_after_label=do not insert
++org.eclipse.cdt.core.formatter.insert_new_line_after_opening_brace_in_array_initializer=do not insert
++org.eclipse.cdt.core.formatter.insert_new_line_after_template_declaration=do not insert
++org.eclipse.cdt.core.formatter.insert_new_line_at_end_of_file_if_missing=do not insert
++org.eclipse.cdt.core.formatter.insert_new_line_before_catch_in_try_statement=do not insert
++org.eclipse.cdt.core.formatter.insert_new_line_before_closing_brace_in_array_initializer=do not insert
++org.eclipse.cdt.core.formatter.insert_new_line_before_colon_in_constructor_initializer_list=do not insert
++org.eclipse.cdt.core.formatter.insert_new_line_before_else_in_if_statement=insert
++org.eclipse.cdt.core.formatter.insert_new_line_before_identifier_in_function_declaration=do not insert
++org.eclipse.cdt.core.formatter.insert_new_line_before_while_in_do_statement=do not insert
++org.eclipse.cdt.core.formatter.insert_new_line_in_empty_block=insert
++org.eclipse.cdt.core.formatter.insert_space_after_assignment_operator=insert
++org.eclipse.cdt.core.formatter.insert_space_after_binary_operator=insert
++org.eclipse.cdt.core.formatter.insert_space_after_closing_angle_bracket_in_template_arguments=insert
++org.eclipse.cdt.core.formatter.insert_space_after_closing_angle_bracket_in_template_parameters=insert
++org.eclipse.cdt.core.formatter.insert_space_after_closing_brace_in_block=insert
++org.eclipse.cdt.core.formatter.insert_space_after_closing_paren_in_cast=insert
++org.eclipse.cdt.core.formatter.insert_space_after_colon_in_base_clause=insert
++org.eclipse.cdt.core.formatter.insert_space_after_colon_in_case=insert
++org.eclipse.cdt.core.formatter.insert_space_after_colon_in_conditional=insert
++org.eclipse.cdt.core.formatter.insert_space_after_colon_in_labeled_statement=insert
++org.eclipse.cdt.core.formatter.insert_space_after_comma_in_array_initializer=insert
++org.eclipse.cdt.core.formatter.insert_space_after_comma_in_base_types=insert
++org.eclipse.cdt.core.formatter.insert_space_after_comma_in_declarator_list=insert
++org.eclipse.cdt.core.formatter.insert_space_after_comma_in_enum_declarations=insert
++org.eclipse.cdt.core.formatter.insert_space_after_comma_in_expression_list=insert
++org.eclipse.cdt.core.formatter.insert_space_after_comma_in_method_declaration_parameters=insert
++org.eclipse.cdt.core.formatter.insert_space_after_comma_in_method_declaration_throws=insert
++org.eclipse.cdt.core.formatter.insert_space_after_comma_in_method_invocation_arguments=insert
++org.eclipse.cdt.core.formatter.insert_space_after_comma_in_structured_binding_name_list=insert
++org.eclipse.cdt.core.formatter.insert_space_after_comma_in_template_arguments=insert
++org.eclipse.cdt.core.formatter.insert_space_after_comma_in_template_parameters=insert
++org.eclipse.cdt.core.formatter.insert_space_after_lambda_return=insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_angle_bracket_in_template_arguments=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_angle_bracket_in_template_parameters=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_brace_in_array_initializer=insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_bracket=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_paren_in_cast=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_paren_in_catch=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_paren_in_exception_specification=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_paren_in_for=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_paren_in_if=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_paren_in_method_declaration=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_paren_in_method_invocation=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_paren_in_parenthesized_expression=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_paren_in_switch=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_paren_in_while=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_opening_structured_binding_name_list=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_pointer_in_declarator_list=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_pointer_in_method_declaration=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_postfix_operator=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_prefix_operator=do not insert
++org.eclipse.cdt.core.formatter.insert_space_after_question_in_conditional=insert
++org.eclipse.cdt.core.formatter.insert_space_after_semicolon_in_for=insert
++org.eclipse.cdt.core.formatter.insert_space_after_unary_operator=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_assignment_operator=insert
++org.eclipse.cdt.core.formatter.insert_space_before_binary_operator=insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_angle_bracket_in_template_arguments=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_angle_bracket_in_template_parameters=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_brace_in_array_initializer=insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_bracket=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_paren_in_cast=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_paren_in_catch=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_paren_in_exception_specification=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_paren_in_for=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_paren_in_if=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_paren_in_method_declaration=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_paren_in_method_invocation=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_paren_in_parenthesized_expression=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_paren_in_switch=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_paren_in_while=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_closing_structured_binding_name_list=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_colon_in_base_clause=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_colon_in_case=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_colon_in_conditional=insert
++org.eclipse.cdt.core.formatter.insert_space_before_colon_in_default=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_colon_in_labeled_statement=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_comma_in_array_initializer=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_comma_in_base_types=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_comma_in_declarator_list=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_comma_in_enum_declarations=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_comma_in_expression_list=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_comma_in_method_declaration_parameters=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_comma_in_method_declaration_throws=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_comma_in_method_invocation_arguments=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_comma_in_structured_binding_name_list=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_comma_in_template_arguments=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_comma_in_template_parameters=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_lambda_return=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_angle_bracket_in_template_arguments=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_angle_bracket_in_template_parameters=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_brace_in_array_initializer=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_brace_in_block=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_brace_in_linkage_declaration=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_brace_in_method_declaration=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_brace_in_namespace_declaration=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_brace_in_switch=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_brace_in_type_declaration=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_bracket=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_paren_in_catch=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_paren_in_exception_specification=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_paren_in_for=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_paren_in_if=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_paren_in_method_declaration=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_paren_in_method_invocation=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_paren_in_parenthesized_expression=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_paren_in_switch=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_paren_in_while=insert
++org.eclipse.cdt.core.formatter.insert_space_before_opening_structured_binding_name_list=insert
++org.eclipse.cdt.core.formatter.insert_space_before_pointer_in_declarator_list=insert
++org.eclipse.cdt.core.formatter.insert_space_before_pointer_in_method_declaration=insert
++org.eclipse.cdt.core.formatter.insert_space_before_postfix_operator=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_prefix_operator=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_question_in_conditional=insert
++org.eclipse.cdt.core.formatter.insert_space_before_ref_qualifier_in_structured_binding=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_semicolon=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_semicolon_in_for=do not insert
++org.eclipse.cdt.core.formatter.insert_space_before_unary_operator=do not insert
++org.eclipse.cdt.core.formatter.insert_space_between_empty_braces_in_array_initializer=do not insert
++org.eclipse.cdt.core.formatter.insert_space_between_empty_brackets=do not insert
++org.eclipse.cdt.core.formatter.insert_space_between_empty_parens_in_exception_specification=do not insert
++org.eclipse.cdt.core.formatter.insert_space_between_empty_parens_in_method_declaration=do not insert
++org.eclipse.cdt.core.formatter.insert_space_between_empty_parens_in_method_invocation=do not insert
++org.eclipse.cdt.core.formatter.join_wrapped_lines=true
++org.eclipse.cdt.core.formatter.keep_else_statement_on_same_line=false
++org.eclipse.cdt.core.formatter.keep_empty_array_initializer_on_one_line=false
++org.eclipse.cdt.core.formatter.keep_imple_if_on_one_line=false
++org.eclipse.cdt.core.formatter.keep_then_statement_on_same_line=false
++org.eclipse.cdt.core.formatter.lineSplit=100
++org.eclipse.cdt.core.formatter.number_of_empty_lines_to_preserve=1
++org.eclipse.cdt.core.formatter.put_empty_statement_on_new_line=true
++org.eclipse.cdt.core.formatter.tabulation.char=tab
++org.eclipse.cdt.core.formatter.tabulation.size=4
++org.eclipse.cdt.core.formatter.use_comment_formatter_tag=true
++org.eclipse.cdt.core.formatter.use_tabs_only_for_leading_indentations=false
+diff --git a/.settings/org.eclipse.cdt.ui.prefs b/.settings/org.eclipse.cdt.ui.prefs
+new file mode 100644
+index 0000000..36b764b
+--- /dev/null
++++ b/.settings/org.eclipse.cdt.ui.prefs
+@@ -0,0 +1,3 @@
++eclipse.preferences.version=1
++formatter_profile=_Default
++formatter_settings_version=1
+diff --git a/.settings/org.eclipse.ltk.core.refactoring.prefs b/.settings/org.eclipse.ltk.core.refactoring.prefs
+new file mode 100644
+index 0000000..b196c64
+--- /dev/null
++++ b/.settings/org.eclipse.ltk.core.refactoring.prefs
+@@ -0,0 +1,2 @@
++eclipse.preferences.version=1
++org.eclipse.ltk.core.refactoring.enable.project.refactoring.history=false
+diff --git a/.settings/org.eclipse.wst.sse.core.prefs b/.settings/org.eclipse.wst.sse.core.prefs
+new file mode 100644
+index 0000000..8d8038d
+--- /dev/null
++++ b/.settings/org.eclipse.wst.sse.core.prefs
+@@ -0,0 +1,6 @@
++eclipse.preferences.version=1
++task-tags/enabled=true
++task-tags/ignored-contentTypes=org.eclipse.core.runtime.xml
++task-tags/taskPriorities=1,2
++task-tags/taskTags=TODO,FIXME
++task-tags/use-project-settings=true
+-- 
+2.20.1
+
