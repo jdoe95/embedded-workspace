@@ -1,0 +1,4 @@
+# source/testing/algorithm/KConfig
+menu "Algorithm Unit Tests"
+	rsource "crc/KConfig"
+endmenu
