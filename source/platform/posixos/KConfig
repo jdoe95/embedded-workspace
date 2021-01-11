@@ -1,3 +1,32 @@
 # source/platform/posixos/KConfig
 menu "POSIX platform features"
+	config PLAT_POSIXOS_LOGGER
+		bool "Logger library"
+
+	menu "Logger library settings"
+		depends on PLAT_POSIXOS_LOGGER
+		choice
+			prompt "Logger library compilation log level"
+			config PLAT_POSIXOS_LOGGER_LEVELTRACE
+				bool "trace"
+	
+			config PLAT_POSIXOS_LOGGER_LEVELDEBUG
+				bool "debug"
+	
+			config PLAT_POSIXOS_LOGGER_LEVELINFO
+				bool "info"
+	
+			config PLAT_POSIXOS_LOGGER_LEVELERR
+				bool "error"
+	
+			config PLAT_POSIXOS_LOGGER_LEVELCRIT
+				bool "critical"
+	
+			config PLAT_POSIXOS_LOGGER_LEVELDISABLE
+				bool "disabled"
+		endchoice
+
+		config PLAT_POSIXOS_LOGGER_FILEPATH
+			string "Log file path"
+	endmenu
 endmenu
