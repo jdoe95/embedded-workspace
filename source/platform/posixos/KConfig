@@ -1,0 +1,3 @@
+# source/platform/posixos/KConfig
+menu "POSIX platform features"
+endmenu
