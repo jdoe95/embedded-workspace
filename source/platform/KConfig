@@ -39,4 +39,6 @@ menu "Platform"
 
 	config PLAT_UNALIGNED
 		bool "Unaligned access routines"
+
+	rsource "posixos/KConfig"
 endmenu
