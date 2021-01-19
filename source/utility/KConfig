@@ -1,0 +1,3 @@
+# source/utility/KConfig
+menu "Utility"
+endmenu
