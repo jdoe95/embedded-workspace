@@ -112,6 +112,23 @@ $(D_BUILD)/%.c.o: %.c | $(OBJDIR_TREE)
 $(D_BUILD)/%.cc.o: %.cc | $(OBJDIR_TREE)
 	$(CPP) -c -MMD -MP -MF $(@:%.o=%.d) -MT $@ -o $@ $<
 
+
+
+#
+# The following 2 targets are invoked by Eclipse CDT scanner discovery to print compiler include
+# paths and predefined macros which are then parsed by Eclipse for source code indexing and
+# run-as-you-type syntax checks.
+#
+.PHONY: specs/gcc
+specs/gcc:
+	$(CC) $(SPEC_FLAGS) -E -P -v -dD $(SPEC_INPUTS)
+
+.PHONY: specs/g++
+specs/g++:
+	$(CPP) $(SPEC_FLAGS) -E -P -v -dD $(SPEC_INPUTS)
+
+
+
 .PHONY: help
 help: basic-help
 	$(ECHO) $(call HELP_ITEM,variant,Makes and runs test-runner)
