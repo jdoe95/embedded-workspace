@@ -1,2 +1,5 @@
 # Compiled Python files
 tool/**/__pycache__
+
+# Old variant config files
+recipe/*/*.config.mk.old
