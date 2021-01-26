@@ -1,3 +1,5 @@
 # source/utility/KConfig
 menu "Utility"
+	config UTIL_SOFTIRQ
+		bool "SoftIRQ work deferral routines"
 endmenu
