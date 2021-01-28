@@ -2,4 +2,7 @@
 menu "Utility"
 	config UTIL_SOFTIRQ
 		bool "SoftIRQ work deferral routines"
+
+	config UTIL_LINKQ
+		bool "Doubly linked queue"
 endmenu
