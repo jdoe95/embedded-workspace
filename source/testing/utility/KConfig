@@ -1,0 +1,5 @@
+# source/testing/utility/KConfig
+config TEST_UTIL_LINKQ
+	bool "utility/linkq unit tests"
+	select UTIL_LINKQ
+	select GTEST

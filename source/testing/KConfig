@@ -6,4 +6,5 @@ menu "Unit Tests"
 	depends on TESTING
 	rsource "platform/KConfig"
 	rsource "algorithm/KConfig"
+	rsource "utility/KConfig"
 endmenu
